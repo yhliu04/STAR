@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ProPainter for Video Inpainting">
+  <meta name="keywords" content="ProPainter, Video Inpainting, Video Completion, Watermark Removal, Temporal Propogation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upscale-A-Video for Video Super-Resolution</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+
+  </script> -->
+  <style>
+  .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
+  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- custom css file  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/twentytwenty.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop head">
+      <div class="columns is-centered">
+        <div class="column has-text-centered head">
+          <h1 class="title is-2 publication-title"> 
+            <span style="color: #4285F4;">Up</span><span style="color: #EA4335;">sc</span><span style="color: #FBBC05;">al</span><span style="color: #34A853;">e</span>-<span style="color: #4285F4;">A</span>-<span style="color: #EA4335;">Vi</span><span style="color: #FBBC05;">d</span><span style="color: #34A853;">eo</span><br>
+          </h1>
+          <h1 class="title is-3 publication-title"> 
+            Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://shangchenzhou.com/">Shangchen Zhou*</a>,&nbsp;&nbsp;</span>
+            <span class="author-block">
+              <a href="https://pq-yang.github.io/">Peiqing Yang*</a>,&nbsp;&nbsp;</span>
+            <span class="author-block">
+              <a href="https://iceclear.github.io/">Jianyi Wang</a>,&nbsp;&nbsp;</span> 
+            <span class="author-block">
+              <a href="https://github.com/Luo-Yihang/">Yihang Luo</a>,&nbsp;&nbsp;</span> 
+            <span class="author-block">
+              <a href="https://www.mmlab-ntu.com/person/ccloy/">Chen Change Loy</a></span>
+            <span class="author-block">
+          </div>
+
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">S-Lab, Nanyang Technological University </span>
+          </div>
+
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">ICCV 2023</span>
+          </div> -->
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="./xx.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.06640" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block"> 
+                <a href="https://github.com/sczhou/Upscale-A-Video" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Demo Link. -->
+              <!-- <span class="link-block">
+                <a href="https://huggingface.co/spaces/sczhou/ProPainter" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="./assets/images/hf.png">
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span> -->
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/b9J3lqiKnLM" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- first row -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">AIGC Video</div>
+            <div class="video">
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/aigc01_inp.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/aigc01_out.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">Real-World Video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/real02_inp.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/real02_out.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">AIGC Video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/aigc02_inp.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/aigc02_out.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">Real-World Video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/real03_inp.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/real03_out.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">Real-World Video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/real04_inp.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/real04_out.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">Old Movie Clip</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/old01_inp.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/old01_out.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">Real-World Video</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/real01_inp.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/real01_out.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">Animation Clip</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/animation01_inp.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/animation01_out.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+</section>
+
+
+
+<section class="teaser">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-four-fifths"> -->
+        <div class="column">
+          <div class="content has-text-justified">
+            <br>
+            <b>Upscale-A-Video</b> is a diffusion-based model that upscales videos by taking the 
+            low-resolution video and text prompts as inputs.
+          </div>
+          <div class="hr"></div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <!-- <div class="column"> -->
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-based diffusion models have exhibited remarkable success in generation and editing, 
+            showing great promise for enhancing visual content with their generative prior. 
+            However, applying these models to video super-resolution remains challenging due to the 
+            high demands for output fidelity and temporal consistency, which is complicated by the 
+            inherent randomness in diffusion models.  Our study introduces <b>Upscale-A-Video</b>, 
+            a text-guided latent diffusion framework for video upscaling. This framework ensures 
+            temporal coherence through two key mechanisms: locally, it integrates temporal layers 
+            into U-Net and VAE-Decoder, maintaining consistency in short sequences; globally, without 
+            training, a flow-guided recurrent latent propagation module is introduced to enhance overall 
+            video stability by propagating and fusing latent across the entire sequences. Thanks to the 
+            diffusion paradigm, our model also offers greater flexibility by allowing text prompts to 
+            guide texture creation and adjustable noise levels to balance restoration and generation, 
+            enabling a trade-off between fidelity and quality. Extensive experiments show that 
+            <b>Upscale-A-Video</b> surpasses existing methods in both synthetic and real-world benchmarks, 
+            as well as in AI-generated videos, showcasing impressive visual realism and temporal consistency.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            Upscale-A-Video processes long videos using both local and global strategies to maintain temporal 
+            coherence. It divides the video into segments and processes them using a U-Net with temporal layers 
+            for intra-segment consistency. During user-specified diffusion steps for global refinement, 
+            a recurrent latent propagation module is used to enhance inter-segment consistency. 
+            Finally, a finetuned VAE-Decoder reduces remaining flickering artifacts for low-level consistency.
+          </p>
+          <div class="column">
+            <img src="./assets/images/pipeline.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper video. -->
+<div id="spotlight-video">
+  <div class="container is-max-desktop">
+      <div class="column">
+        <h2 class="title is-3">
+          <span class="a">Upscale-A-Video</span>
+          <span class="b">Demo</span>
+        </h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/b9J3lqiKnLM?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{zhou2024upscaleavideo,
+      title     = {{Upscale-A-Video}: Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution},
+      author    = {Zhou, Shangchen and Yang, Peiqing and Wang, Jianyi and Luo, Yihang and Loy, Chen Change},
+      booktitle = {CVPR},
+      year      = {2024}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://arxiv.org/abs/2312.06640" target="_blank">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/sczhou/Upscale-A-Video" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a class="icon-link" href="https://youtu.be/b9J3lqiKnLM" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <div class="columns is-centered"><p>
+            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">here</a>. Thank you!
+          </p></div>
+        </div>
+      </div>
+    </div>
+
+    <!--=================Visitor==========================-->
+    <div class="content has-text-centered" style="padding:0 0 0 0">
+      <img src='https://api.infinitescript.com/badgen/count?name=sczhou/Upscale-A-Video&ltext=Visitors&color=3977dd' alt='visitors'>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- custom js file  -->
+  <!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
+  <script src="./assets/js/bulma-carousel.min.js"></script>
+  <script src="./assets/js/bulma-slider.min.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/jquery.event.move.js"></script>
+  <script src="./assets/js/jquery.twentytwenty.js"></script>
+  <script>
+  $(function(){
+    $(".twentytwenty-container").twentytwenty();
+    // $(".twentytwenty-container", "#results-carousel").twentytwenty({default_offset_pct: 0.5, ratio: 0.5});
+  });
+  </script>
+</body>
+</html>

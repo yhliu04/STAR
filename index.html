@@ -53,11 +53,11 @@
     <div class="container is-max-desktop head">
       <div class="columns is-centered">
         <div class="column has-text-centered head">
-          <h1 class="title is-1 publication-title" style="font-family: 'Georgia'"> 
-            <span style="color: #EA4335;">S </span><span style="color: #FBBC05;">T </span><span style="color: #34A853;">A </span><span style="color: #4285F4;">R</span><br>
+          <h1 class="title is-1 publication-title" style="font-size:64px ;font-family: 'Georgia'; background: linear-gradient(to right, #FF6EC4, #9E6BF0, #7873F5, #34E2E2); display: inline-block; -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> 
+            S T A R
           </h1>
           <h1 class="title is-2 publication-title"> 
-            Spatial-Temporal Augmentation with Text-to-Video Models for Real-World Video Super-Resolution
+            <span style="color: #FF6EC4;font-size:52px">S</span>patial-<span style="color: #9E6BF0;font-size:52px">T</span>emporal <span style="color: #7873F5;font-size:52px">A</span>ugmentation with Text-to-Video Models for <span style="color: #34E2E2;font-size:52px">R</span>eal-World Video Super-Resolution
           </h1>
 
           <div class="is-size-5 publication-authors">
@@ -222,12 +222,15 @@
 <!-- first row -->
 <section class="hero is-light is-small">
   <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Real-World Videos</h2>
+    </div>
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
 
         <div class="item">
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
-            <div class="desc">Real-World Video</div>
+            <div class="desc">from Bilibili</div>
             <div class="video">
               <video muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/apt_lq.mp4" type="video/mp4">
@@ -242,16 +245,16 @@
         </div>
 
         <div class="item">
-          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
-            <div class="desc">Real-World Video</div>
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.75">
+            <div class="desc">from VideoLQ</div>
             <div class="video">
               <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/apt_lq.mp4" type="video/mp4">
+                <source src="./assets/videos/016lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
               <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/apt_out.mp4" type="video/mp4">
+                <source src="./assets/videos/016ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -259,15 +262,78 @@
 
         <div class="item">
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
-            <div class="desc">AIGC Video</div>
+            <div class="desc">from Bilibili</div>
             <div class="video">
               <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/apt_lq.mp4" type="video/mp4">
+                <source src="./assets/videos/animal_lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
               <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/apt_out.mp4" type="video/mp4">
+                <source src="./assets/videos/animal_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.75">
+            <div class="desc">from VideoLQ</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/007lq.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/007ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">AIGC Videos</h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">from Kling</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/031_klingai_reedit.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/031_klingai_reedit_ours.mp4" type="video/mp4">
+              </video> 
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">from Kling</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/018_klingai_reedit.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/018_klingai_reedit_ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -275,15 +341,31 @@
 
         <div class="item">
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
-            <div class="desc">AIGC Video</div>
+            <div class="desc">from Kling</div>
             <div class="video">
               <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/apt_lq.mp4" type="video/mp4">
+                <source src="./assets/videos/023_klingai_reedit.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
               <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/apt_out.mp4" type="video/mp4">
+                <source src="./assets/videos/023_klingai_reedit_ours.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
+            <div class="desc">from CogvideoX</div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/001_CogVideo.mp4" type="video/mp4">
+              </video> 
+            </div>
+            <div class="video">
+              <video muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/001_CogVideo_ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -292,7 +374,6 @@
     </div>
   </div>
 </section>
-
 
 
 <section class="teaser" style="font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 20px;">
