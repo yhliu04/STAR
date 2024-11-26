@@ -39,9 +39,12 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/twentytwenty.css">
   <!-- <link rel="icon" href="./assets/images/favicon.svg"> -->
+  <link rel="preload" href="./assets/videos/aptlq.mp4" as="video">
+  <link rel="preload" href="./assets/videos/apt_out2.mp4" as="video">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./assets/js/fontawesome.all.min.js"></script>
+  <script src="./assets/js/video-control.js" defer></script>
   <!-- <script src="./assets/js/bulma-carousel.min.js"></script>
   <script src="./assets/js/bulma-slider.min.js"></script>
   <script src="./assets/js/index.js"></script> -->
@@ -66,11 +69,9 @@
             <span class="author-block">
               <a href="https://github.com/yhliu04">Yinhong Liu</a><sup>1*</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=Uhp3JKgAAAAJ&hl=zh-CN&oi=sra">Chen Zhao</a><sup>1</sup>,&nbsp;&nbsp;</span> 
-            <span class="author-block">
               <a href="https://scholar.google.com.hk/citations?user=yWq1Fd4AAAAJ&hl=en">Penghao Zhou</a><sup>2</sup>,&nbsp;&nbsp;</span> 
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=zh-CN&user=Ds5wwRoAAAAJ">Zhenheng Yang</a><sup>2</sup>,&nbsp;&nbsp;</span>
+              <a href="https://scholar.google.com/citations?user=Uhp3JKgAAAAJ&hl=zh-CN&oi=sra">Chen Zhao</a><sup>1</sup>,&nbsp;&nbsp;</span> 
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=WDPUUGUAAAAJ&hl=en">Jun Zhou</a><sup>3</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
@@ -79,6 +80,8 @@
               <a href="https://jessezhang92.github.io/">Zhenyu Zhang</a><sup>1</sup>,&nbsp;&nbsp;</span>
             <span class="author-block">
               <a href="https://scholar.google.com.hk/citations?user=6CIDtZQAAAAJ&hl=en">Jian Yang</a><sup>1</sup>,&nbsp;&nbsp;</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=Ds5wwRoAAAAJ">Zhenheng Yang</a><sup>2</sup>,&nbsp;&nbsp;</span>  
               <span class="author-block">
               <a href="https://tyshiwo.github.io/">Ying Tai</a><sup>1&#8224</sup></span>
           </div>
@@ -232,13 +235,13 @@
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
             <div class="desc">from Bilibili</div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video  preload="auto" autoplay="autoplay" muted loop width="100%">
                 <source src="./assets/videos/aptlq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/apt_out.mp4" type="video/mp4">
+              <video preload="auto" autoplay="autoplay" muted loop="loop" width="100%">
+                <source src="./assets/videos/apt_out2.mp4" type="video/mp4">
               </video> 
             </div>
           </div>
@@ -248,12 +251,12 @@
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
             <div class="desc">from VideoLQ</div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video  preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/016_lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/016_ours.mp4" type="video/mp4">
               </video>
             </div>
@@ -264,13 +267,13 @@
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
             <div class="desc">from Bilibili</div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/animallq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/animal_ours.mp4" type="video/mp4">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/animal_ours2.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -280,12 +283,12 @@
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
             <div class="desc">from VideoLQ</div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/007_lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/007_ours.mp4" type="video/mp4">
               </video>
             </div>
@@ -311,13 +314,13 @@
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
             <div class="desc">from Kling</div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video  preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/031_klingai_reedit_lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/031_klingai_reedit_ours.mp4" type="video/mp4">
+              <video  preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/031_klingai_reedit_ours2.mp4" type="video/mp4">
               </video> 
             </div>
           </div>
@@ -327,13 +330,13 @@
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
             <div class="desc">from Kling</div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/018_klingai_reedit_lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/018_klingai_reedit_ours.mp4" type="video/mp4">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/018_klingai_reedit_ours2.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -343,13 +346,13 @@
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
             <div class="desc">from Kling</div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/023_klingai_reedit_lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/023_klingai_reedit_ours.mp4" type="video/mp4">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/023_klingai_reedit_ours2.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -359,13 +362,13 @@
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
             <div class="desc">from CogvideoX</div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/001_CogVideo_lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
-              <video muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/001_CogVideo_ours.mp4" type="video/mp4">
+              <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
+                <source src="./assets/videos/001_CogVideo_ours2.mp4" type="video/mp4">
               </video>
             </div>
           </div>
