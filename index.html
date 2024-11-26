@@ -24,6 +24,7 @@
   </script> -->
   <style>
   .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
+
   </style>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -226,7 +227,7 @@
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="columns is-centered has-text-centered">
-      <h2 class="title is-3">Real-World Videos</h2>
+      <h2 class="title is-3">Real-World Videos (upscale &times4)</h2>
     </div>
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -305,7 +306,7 @@
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="columns is-centered has-text-centered">
-      <h2 class="title is-3">AIGC Videos</h2>
+      <h2 class="title is-3">AIGC Videos (upscale &times4)</h2>
     </div>
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -328,15 +329,15 @@
 
         <div class="item">
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
-            <div class="desc">from Kling</div>
+            <div class="desc">from CogvideoX</div>
             <div class="video">
               <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/018_klingai_reedit_lq.mp4" type="video/mp4">
+                <source src="./assets/videos/009_CogVideoX_lq.mp4" type="video/mp4">
               </video> 
             </div>
             <div class="video">
               <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
-                <source src="./assets/videos/018_klingai_reedit_ours2.mp4" type="video/mp4">
+                <source src="./assets/videos/009_CogVideoX_ours.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -360,7 +361,7 @@
 
         <div class="item">
           <div class="twentytwenty-container" data-orientation="horizontal" ratio="0.5625">
-            <div class="desc">from CogvideoX</div>
+            <div class="desc">from Cogvideo</div>
             <div class="video">
               <video preload="auto" muted autoplay="autoplay" loop="loop" width="100%">
                 <source src="./assets/videos/001_CogVideo_lq.mp4" type="video/mp4">
@@ -458,6 +459,161 @@
     </div>
   </div>
 </div>
+<section class="hero">
+  <div class="hero-body">
+
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column">
+        <h2 class="title is-3">Comparison with SOTA</h2>
+        <div class="title is-4">
+          <p>
+            Quantitative Comparison
+          </p>
+          <div class="column">
+            <img src="./assets/images/comparison.png" />
+          </div>
+        </div>
+
+        <div class="title is-4">
+          <p>
+            Qualitative Comparison
+          </p>
+        </div>
+
+        <!-- <div class="title is-4">
+          <p>
+            VideoLQ
+          </p>
+        </div> -->
+
+        <div class="columns is-centered">
+
+          <!-- Visual Effects. -->
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-5">Upscale-A-Video</h2>
+              <video autoplay controls muted loop playsinline width="99%">
+                <source src="./assets/videos/uav005.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/uavapt.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/uav006.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/uav008.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/uav009.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/uav016.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-5">MGLDVSR</h2>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/mgld005.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/mgldapt.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/mgld006.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/mgld008.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/mgld009.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/mgld016.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-5">RealViformer</h2>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/rvf005.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/rvfapt.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/rvf006.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/rvf008.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/rvf009.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/rvf016.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-5">Ours</h2>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/ours005.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/apt_out2.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/ours006.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/ours008.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/ours009.mp4"
+                        type="video/mp4">
+              </video>
+              <video autoplay controls muted loop playsinline height="100%">
+                <source src="./assets/videos/ours016.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -486,7 +642,7 @@
       <div class="column is-8">
         <div class="content">
           <div class="columns is-centered"><p>
-            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">here</a>. Thank you!
+            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a> and <a href="https://shangchenzhou.com/projects/upscale-a-video/" target="_blank">Upscale-A-Video</a>.
           </p></div>
         </div>
       </div>
