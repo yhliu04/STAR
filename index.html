@@ -39,13 +39,18 @@
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/twentytwenty.css">
-  <!-- <link rel="icon" href="./assets/images/favicon.svg"> -->
-  <link rel="preload" href="./assets/videos/aptlq.mp4" as="video">
-  <link rel="preload" href="./assets/videos/apt_out2.mp4" as="video">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/foundation.min.css">
+  <!-- <link rel="stylesheet" href="./assets/css/all.min.css"> -->
+  <link rel="stylesheet" href="./assets/css/clarity.css">
+  <link rel="stylesheet" href="./assets/css/slider.css">
+  <!-- <link rel="stylesheet" href="./assets/css/main.free.css"> -->
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./assets/js/fontawesome.all.min.js"></script>
   <script src="./assets/js/video-control.js" defer></script>
+  
   <!-- <script src="./assets/js/bulma-carousel.min.js"></script>
   <script src="./assets/js/bulma-slider.min.js"></script>
   <script src="./assets/js/index.js"></script> -->
@@ -486,134 +491,210 @@
             VideoLQ
           </p>
         </div> -->
-
-        <div class="columns is-centered">
-
-          <!-- Visual Effects. -->
-          <div class="column">
-            <div class="content">
-              <h2 class="title is-5">Upscale-A-Video</h2>
-              <video autoplay controls muted loop playsinline width="99%">
-                <source src="./assets/videos/uav005.mp4"
-                        type="video/mp4">
-              </video>
-              <!-- <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/uavapt.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/uav006.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/uav008.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/uav009.mp4"
-                        type="video/mp4">
-              </video> -->
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/uav016.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
+        <style>
+          .card-img {
+              border: 2px solid #c1bfbf;
+              border-radius: 8px;
+              padding: 2px;
+              display: inline-block;
+              transition: transform 0.3s ease-in-out; 
+              transform-origin: center center; 
+          }
+        
+          .card-img:active {
+              transform: scale(1.2); 
+          }
+        </style>
+        
+        <style>
+          .hidden {
+          display: none;
+        }
+        </style>
+        
+        
+        <div class="container blog extra-large white">
+          <div class="slide-menu" style="margin-bottom: 60px;">
+              <ul class="dots" id="slide-menu-2" style="display: flex; justify-content: center; gap: 70px; flex-wrap: wrap;">
+                  <li class="dot active" data-slide="0"><img class="card-img" src="./assets/images/gt005.png" alt="Slide 1" style="width: 80px; height: 50px;"></li>
+                  <li class="dot" data-slide="1"><img class="card-img" src="./assets/images/gt006.png" alt="Slide 2" style="width: 80px; height: 50px;"></li>
+                  <li class="dot" data-slide="2"><img class="card-img" src="./assets/images/gt008.png" alt="Slide 3" style="width: 80px; height: 50px;"></li>
+                  <li class="dot" data-slide="3"><img class="card-img" src="./assets/images/gt016.png" alt="Slide 4" style="width: 80px; height: 50px;"></li>
+              </ul>
           </div>
-          
-          <div class="column">
-            <div class="content">
-              <h2 class="title is-5">MGLDVSR</h2>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/mgld005.mp4"
-                        type="video/mp4">
-              </video>
-              <!-- <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/mgldapt.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/mgld006.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/mgld008.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/mgld009.mp4"
-                        type="video/mp4">
-              </video> -->
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/mgld016.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
+         
+          <div class="slide-content" data-slide="0" style="display: block;">
+              <div class="columns-4">
+                  <figure style="text-align: center;">
+                    <video autoplay controls muted loop playsinline width="98%">
+                      <source src="./assets/videos/uav005.mp4"
+                              type="video/mp4">
+                    </video>
+                    <b><figcaption style="margin-top: 8px; ">Upscale-A-Video<figcaption></b>
+                  </figure>
+                  <figure style="text-align: center;">
+                    <video autoplay controls muted loop playsinline width="100%">
+                      <source src="./assets/videos/mgld005.mp4"
+                              type="video/mp4">
+                    </video>
+                      <b><figcaption style="margin-top: 8px; ">MGLDVSR<figcaption></b>
+                  </figure>
+                  <figure style="text-align: center;">
+                    <video autoplay controls muted loop playsinline width="100%">
+                      <source src="./assets/videos/rvf005.mp4"
+                              type="video/mp4">
+                    </video>
+                      <b><figcaption style="margin-top: 8px; ">RealViformer<figcaption></b>
+                  </figure>
+                  <figure style="text-align: center;">
+                    <video autoplay controls muted loop playsinline width="100%">
+                      <source src="./assets/videos/ours005.mp4"
+                              type="video/mp4">
+                    </video>
+                      <b><figcaption style="margin-top: 8px; ">Ours<figcaption></b>
+                  </figure>
+              </div>
           </div>
-          
-          <div class="column">
-            <div class="content">
-              <h2 class="title is-5">RealViformer</h2>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/rvf005.mp4"
-                        type="video/mp4">
-              </video>
-              <!-- <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/rvfapt.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/rvf006.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/rvf008.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/rvf009.mp4"
-                        type="video/mp4">
-              </video> -->
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/rvf016.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="content">
-              <h2 class="title is-5">Ours</h2>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/ours005.mp4"
-                        type="video/mp4">
-              </video>
-              <!-- <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/apt_out2.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/ours006.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/ours008.mp4"
-                        type="video/mp4">
-              </video>
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/ours009.mp4"
-                        type="video/mp4">
-              </video> -->
-              <video autoplay controls muted loop playsinline height="100%">
-                <source src="./assets/videos/ours016.mp4"
-                        type="video/mp4">
-              </video>
+        
+          <div class="slide-content" data-slide="1" style="display: none;">
+            <div class="columns-4">
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/uav006.mp4"
+                            type="video/mp4">
+                  </video>
+                  <b><figcaption style="margin-top: 8px; ">Upscale-A-Video<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/mgld006.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">MGLDVSR<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/rvf006.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">RealViformer<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/ours006.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">Ours<figcaption></b>
+                </figure>
             </div>
           </div>
 
-      </div>
+          <div class="slide-content" data-slide="2" style="display: none;">
+            <div class="columns-4">
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/uav008.mp4"
+                            type="video/mp4">
+                  </video>
+                  <b><figcaption style="margin-top: 8px; ">Upscale-A-Video<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/mgld008.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">MGLDVSR<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/rvf008.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">RealViformer<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/ours008.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">Ours<figcaption></b>
+                </figure>
+            </div>
+          </div>
+
+          <div class="slide-content" data-slide="3" style="display: none;">
+            <div class="columns-4">
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/uav016.mp4"
+                            type="video/mp4">
+                  </video>
+                  <b><figcaption style="margin-top: 8px; ">Upscale-A-Video<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/mgld016.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">MGLDVSR<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/rvf016.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">RealViformer<figcaption></b>
+                </figure>
+                <figure style="text-align: center;">
+                  <video autoplay controls muted loop playsinline width="100%">
+                    <source src="./assets/videos/ours016.mp4"
+                            type="video/mp4">
+                  </video>
+                    <b><figcaption style="margin-top: 8px; ">Ours<figcaption></b>
+                </figure>
+            </div>
+          </div>
+        
+
+      
     </div>
+
+    
   </div>
 </section>
+
+
+<script>
+  // JavaScript for slide switching
+  document.querySelectorAll('.slide-menu').forEach(menu => {
+      menu.querySelectorAll('.dot').forEach(dot => {
+          dot.addEventListener('click', () => {
+              const slideIndex = dot.getAttribute('data-slide');
+              const container = menu.parentElement;
+              
+              // Remove 'active' class from all dots and add to the clicked dot
+              menu.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+              dot.classList.add('active');
+  
+              // Hide all slides and show the selected one
+              container.querySelectorAll('.slide-content').forEach(slide => {
+                  slide.style.display = slide.getAttribute('data-slide') === slideIndex ? 'block' : 'none';
+              });
+          });
+      });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.dots .dot').forEach(function(dot) {
+          if (dot.querySelector('img')) {
+              dot.style.background = 'none'; 
+              dot.style.border = 'none'; 
+          }
+      });
+  });
+</script>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
